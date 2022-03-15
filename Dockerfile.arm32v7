@@ -1,0 +1,9 @@
+FROM arm32v7/gcc:11-bullseye
+RUN apt-get update -y && apt-get install -y cmake
+WORKDIR /c2a_raspi
+COPY . .
+RUN git submodule init && git submodule update
+RUN mkdir build
+WORKDIR /c2a_raspi/build
+RUN cmake ..
+RUN cmake --build .
