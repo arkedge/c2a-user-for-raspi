@@ -6,6 +6,7 @@
 #define COMMON_CMD_PACKET_DEFINE_H_
 
 #include <src_core/TlmCmd/Ccsds/space_packet_typedef.h>
+#include "./Ccsds/apid_define.h"
 
 // CommonCmdPacket として CmdSpacePacket をつかう
 typedef CmdSpacePacket CommonCmdPacket;
@@ -31,5 +32,13 @@ typedef enum
   CCP_DEST_TYPE_TO_TOBC   = 3,
   CCP_DEST_TYPE_TO_UNKOWN = 4
 } CCP_DEST_TYPE;
+
+/**
+ * @brief  バイト列から CCP_DEST_TYPE を取得
+ * @param  dest_type: CCP_DEST_TYPE 候補の uint8_t
+ * @note   不正な入力のときは CCP_DEST_TYPE_TO_UNKOWN を返す
+ * @return CCP_DEST_TYPE
+ */
+CCP_DEST_TYPE CCP_get_dest_type_from_uint8(uint8_t dest_type);
 
 #endif

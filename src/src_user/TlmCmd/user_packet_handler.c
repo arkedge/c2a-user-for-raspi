@@ -14,7 +14,7 @@ void PH_user_init(void)
 
 PH_ACK PH_user_analyze_cmd(const CommonCmdPacket* packet)
 {
-  return PH_UNKNOWN;
+  return PH_ACK_UNKNOWN;
 }
 
 

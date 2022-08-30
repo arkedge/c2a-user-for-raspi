@@ -18,6 +18,9 @@
 #include <src_core/Applications/utility_counter.h>
 #include <src_core/Applications/divided_cmd_utility.h>
 
+// Core TestApp
+#include <src_core/Applications/TestApp/test_ccp_util.h>
+
 // DI
 #include "DriverInstances/di_uart_test.h"
 #include "DriverInstances/di_gs.h"
