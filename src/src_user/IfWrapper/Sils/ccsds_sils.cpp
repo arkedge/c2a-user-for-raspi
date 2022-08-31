@@ -1,15 +1,15 @@
 #pragma section REPRO
 /**
-* @file ccsds_sils.cpp
-* @brief CCSDS通信ラッパーのクラスです。
-*
-* CCSDS通信ラッパーは、
-* CCSDSのインターフェースを実現し、
-* CCSDSポートの初期化、データ送信、データ受信を行う、
-* CCSDS通信ラッパーのクラスです。
-* 個々の機器のインターフェースモジュールに継承させて使用します。
-* @note OBC模擬コンポ<->SILSとはUARTと同様にデータ通信を行う
-*/
+ * @file ccsds_sils.cpp
+ * @brief CCSDS通信ラッパーのクラスです。
+ *
+ * CCSDS通信ラッパーは、
+ * CCSDSのインターフェースを実現し、
+ * CCSDSポートの初期化、データ送信、データ受信を行う、
+ * CCSDS通信ラッパーのクラスです。
+ * 個々の機器のインターフェースモジュールに継承させて使用します。
+ * @note OBC模擬コンポ<->SILSとはUARTと同様にデータ通信を行う
+ */
 
 #include "../ccsds_user.h"
 
@@ -63,14 +63,6 @@ int CCSDS_tx(void* my_ccsds_v, void* data_v, int data_size)
 int CCSDS_reopen(void* my_ccsds_v, int reason)
 {
   return 0;
-}
-
-CCSDS_ERR_CODE CCSDS_read_sequence(uint32_t select, uint32_t* uip_stat)
-{
-  (void)select;
-  (void)uip_stat;
-
-  return CCSDS_ERR_OK;
 }
 
 uint8_t CCSDS_get_buffer_num(void)

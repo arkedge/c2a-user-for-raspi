@@ -5,5 +5,5 @@ COPY . .
 RUN git submodule init && git submodule update
 RUN mkdir build
 WORKDIR /c2a_raspi/build
-RUN cmake ..
+RUN cmake .. -DUSE_SCI_COM_WINGS=OFF
 RUN cmake --build .

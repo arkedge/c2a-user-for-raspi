@@ -8,17 +8,15 @@ project(C2A)
 # ！！！注意！！！
 # これをONにした状態で，SCIの受け口がない場合（TMTC IFが動いてない状態）
 # そちらのバッファが詰まってSILSの動作が止まることがあるので注意すること！
-option(USE_SCI_COM_WINGS "Use SCI_COM_WINGS")
+option(USE_SCI_COM_WINGS "Use SCI_COM_WINGS" ON)
 
 # SCI COM for connection to PC UART
 # ！！！注意！！！
 # これをONにした状態で，SCIの受け口がない場合（受けてのTeratermが起動していない状態）
 # そちらのバッファが詰まってSILSの動作が止まることがあるので注意すること！
-option(USE_SCI_COM_UART "Use SCI_COM_UART")
+option(USE_SCI_COM_UART "Use SCI_COM_UART" OFF)
 
-# default config
-set(USE_SCI_COM_WINGS OFF)
-set(USE_SCI_COM_UART OFF)
+option(BUILD_C2A_AS_SILS_FW "Build C2A as SILS firmware" ON)
 
 set(USE_ALL_C2A_CORE_APPS OFF)
 set(USE_32BIT_COMPILER ON)
@@ -51,6 +49,7 @@ add_subdirectory(${C2A_USER_DIR}/TlmCmd)
 
 set(C2A_SRCS
   ${C2A_USER_DIR}/c2a_main.c
+  ${C2A_CORE_DIR}/System/AnomalyLogger/anomaly_logger.c
 )
 
 if(BUILD_C2A_AS_CXX)
