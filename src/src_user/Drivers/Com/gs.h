@@ -87,16 +87,16 @@ typedef struct
  * @brief Driver の初期化
  * @param[in] uart_ch: 有線通信時の CH
  * @param[in] uart_device_file_name: 有線通信時の デバイスファイル名
- * @return int: 0
+ * @return int: DS_INIT_ERR_CODE
  */
-int GS_init(GS_Driver* gs_driver, char* uart_device_file_name);
+DS_INIT_ERR_CODE GS_init(GS_Driver* gs_driver, char* uart_device_file_name);
 
 /**
  * @brief 地上から CMD を受信する. 形式は TC Transer Frame
  * @param[in] gs_driver: ドライバー
- * @return int: 0
+ * @return int: DS_REC_ERR_CODE
  */
-int GS_rec_tctf(GS_Driver* gs_driver);
+DS_REC_ERR_CODE GS_rec_tctf(GS_Driver* gs_driver);
 
 /**
  * @brief 地上に向けて TLM を送信. 形式は VCDU
